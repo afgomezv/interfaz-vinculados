@@ -1,10 +1,17 @@
+//Componentes
+import { Search } from "../components/Search";
+
+//React-Router
+import { Link } from "react-router-dom";
+
+//Iconos
+
 import {
   BsCheckCircleFill,
   BsFillXCircleFill,
   BsEye,
   BsPencilFill,
 } from "react-icons/bs";
-import { Search } from "../components/Search";
 
 export const List = () => {
   return (
@@ -67,10 +74,14 @@ export const List = () => {
                   <td className="whitespace-nowrap px-3 py-4 text-sm">
                     <div className="flex item-center justify-center">
                       <div className="w-4 mr-4 cursor-pointer transform hover:text-blue-700 hover:scale-125">
-                        <BsEye className="h-5 w-5" />
+                        <Link to="/empleado">
+                          <BsEye className="h-5 w-5" />
+                        </Link>
                       </div>
                       <div className="w-4 mr-4 cursor-pointer transform hover:text-blue-700 hover:scale-125">
-                        <BsPencilFill className="h-5 w-5" />
+                        <Link to="#">
+                          <BsPencilFill className="h-5 w-5" />
+                        </Link>
                       </div>
                     </div>
                   </td>
