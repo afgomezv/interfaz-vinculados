@@ -3,13 +3,13 @@ import { Data } from "./data";
 
 export const Employee = () => {
   return (
-    <>
-      <form action="" className="w-full flex items-center">
-        <section className="inset-y-16 right-16 w-96">
+    <div className="flex">
+      <Menu />
+      <form action="" className="translate-x-48 translate-y-24">
+        <section className="">
           <Data />
         </section>
       </form>
-      <Menu />
-    </>
+    </div>
   );
 };
