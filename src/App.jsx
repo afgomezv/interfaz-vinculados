@@ -6,6 +6,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <List />,
+    errorElement: <h1>No Found Page</h1>,
   },
   {
     path: "/empleado",
