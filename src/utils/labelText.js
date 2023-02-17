@@ -20,7 +20,7 @@ export const labelText = {
   salario2017Label: "Salario 2017",
   salario2018Label: "Primer Salario 2018",
   segundoIncrementoLabel: "Segundo incremento",
-  salario2018FinalLabel: "Segundo Salario 2018",
+  salarioFinal2018lLabel: "Segundo Salario 2018",
   ipc318Label: "IPC 3.18%",
   salario2019Label: "Primer Salario 2019",
   salarioFinal2019Label: "Segundo Salario 2019",

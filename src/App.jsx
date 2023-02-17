@@ -1,6 +1,12 @@
+//React-Router
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+//Rutas
 import { Employee } from "./router/Employee";
 import { List } from "./router/List";
+
+//
+import { Data } from "./components/Data";
 
 const router = createBrowserRouter([
   {

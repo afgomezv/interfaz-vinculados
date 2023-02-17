@@ -20,7 +20,7 @@ export const initialForm = {
   salario2017: "",
   salario2018: "",
   segundoIncremento: "",
-  salario2018Final: "",
+  salarioFinal2018: "",
   ipc318: "",
   salario2019: "",
   salarioFinal2019: "",
@@ -48,6 +48,5 @@ export const initialForm = {
   estadoCivil: "",
   hijos: "",
   otros: "",
+  isActive: true,
 };
-
-export const labelText = {};

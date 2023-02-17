@@ -29,19 +29,47 @@ export const Employee = () => {
   return (
     <div>
       <Menu />
-      <form className="container translate-x-48 translate-y-24">
+      <form
+        onSubmit={handleSubmit}
+        className="container translate-x-48 translate-y-24"
+      >
         <Data
           form={form}
           errors={errors}
           handleChange={handleChange}
           handleBlur={handleBlur}
         />
-        <Company form={form} />
-        <Salary form={form} />
-        <Academy form={form} />
-        <Social form={form} />
-        <Contact form={form} />
-        <Button form={form} />
+        <Company
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
+        <Salary
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
+        <Academy
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
+        <Social
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
+        <Contact
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
+        <Button />
       </form>
     </div>
   );

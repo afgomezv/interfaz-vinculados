@@ -1,8 +1,22 @@
+//Componentes
 import { Input } from "./Input";
-import { labelText } from "../utils/labelText";
 import { Select2 } from "./Select2";
+//Utils
+import { labelText } from "../utils/labelText";
+import { nameInputs } from "../utils/nameInputs";
 
-export const Contact = () => {
+export const Contact = ({ form, errors, handleChange, handleBlur }) => {
+  const {
+    direccion,
+    ciudad,
+    correoPersonal,
+    telefono,
+    celular,
+    estadoCivil,
+    hijos,
+    otros,
+  } = form;
+
   const {
     direccionLabel,
     ciudadLabel,
@@ -14,16 +28,82 @@ export const Contact = () => {
     otrosLabel,
   } = labelText;
 
+  const {
+    direccionName,
+    ciudadName,
+    correoPersonalName,
+    telefonoName,
+    celularName,
+    estadoCivilName,
+    hijosName,
+    otrosName,
+  } = nameInputs;
+
   return (
     <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-3 border rounded-xl shadow-lg p-12 bg-indigo-50 m-12">
-      <Input text={direccionLabel} type="text" />
-      <Input text={ciudadLabel} type="text" />
-      <Input text={correoPersonalLabel} type="text" />
-      <Input text={telefonoLabel} type="number" />
-      <Input text={celularLabel} type="number" />
-      <Select2 text={estadoCivilLabel} />
-      <Input text={hijosLabel} type="number" />
-      <Input text={otrosLabel} type="text" />
+      <Input
+        name={direccionName}
+        value={direccion}
+        errors={errors}
+        handleChange={handleChange}
+        text={direccionLabel}
+        type="text"
+      />
+      <Input
+        name={ciudadName}
+        value={ciudad}
+        errors={errors}
+        handleChange={handleChange}
+        text={ciudadLabel}
+        type="text"
+      />
+      <Input
+        name={correoPersonalName}
+        value={correoPersonal}
+        errors={errors}
+        handleChange={handleChange}
+        text={correoPersonalLabel}
+        type="text"
+      />
+      <Input
+        name={telefonoName}
+        value={telefono}
+        errors={errors}
+        handleChange={handleChange}
+        text={telefonoLabel}
+        type="number"
+      />
+      <Input
+        name={celularName}
+        value={celular}
+        errors={errors}
+        handleChange={handleChange}
+        text={celularLabel}
+        type="number"
+      />
+      <Select2
+        name={estadoCivilName}
+        value={estadoCivil}
+        errors={errors}
+        handleChange={handleChange}
+        text={estadoCivilLabel}
+      />
+      <Input
+        name={hijosName}
+        value={hijos}
+        errors={errors}
+        handleChange={handleChange}
+        text={hijosLabel}
+        type="number"
+      />
+      <Input
+        name={otrosName}
+        value={otros}
+        errors={errors}
+        handleChange={handleChange}
+        text={otrosLabel}
+        type="text"
+      />
     </div>
   );
 };

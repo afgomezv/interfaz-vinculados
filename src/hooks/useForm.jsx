@@ -9,7 +9,7 @@ export const useForm = (initialForm, validateForm) => {
 
   const handleChange = (e) => {
     const { name, type, checked, value } = e.target;
-    setFormData({
+    setForm({
       ...form,
       [name]: type === "checkbox" ? checked : value,
     });
@@ -18,6 +18,8 @@ export const useForm = (initialForm, validateForm) => {
   const handleBlur = (e) => {};
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
     fetch(URL, {
       method: "POST",
       headers: {
