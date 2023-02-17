@@ -30,7 +30,12 @@ export const Employee = () => {
     <div>
       <Menu />
       <form className="container translate-x-48 translate-y-24">
-        <Data form={form} />
+        <Data
+          form={form}
+          errors={errors}
+          handleChange={handleChange}
+          handleBlur={handleBlur}
+        />
         <Company form={form} />
         <Salary form={form} />
         <Academy form={form} />

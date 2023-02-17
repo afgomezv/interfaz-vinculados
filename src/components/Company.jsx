@@ -3,32 +3,32 @@ import { labelText } from "../utils/labelText";
 
 export const Company = () => {
   const {
-    fechaIngreso,
-    tiempoServicio,
-    dependencia,
-    areafuncional,
-    cargo,
-    codigo,
-    grado,
-    nivel,
-    naturaleza,
-    situacionActual,
-    novedad,
+    fechaIngresoLabel,
+    tiempoServicioLabel,
+    dependenciaLabel,
+    areafuncionalLabel,
+    cargoLabel,
+    codigoLabel,
+    gradoLabel,
+    nivelLabel,
+    naturalezaLabel,
+    situacionActualLabel,
+    novedadLabel,
   } = labelText;
 
   return (
     <div className="grid md:grid-cols-2 gap-4 lg:grid-cols-3 border rounded-xl shadow-lg p-12 bg-indigo-50 m-12">
-      <Input text={fechaIngreso} type="date" />
-      <Input text={tiempoServicio} type="number" />
-      <Input text={dependencia} type="text" />
-      <Input text={areafuncional} type="text" />
-      <Input text={cargo} type="text" />
-      <Input text={codigo} type="number" />
-      <Input text={grado} type="number" />
-      <Input text={nivel} type="text" />
-      <Input text={naturaleza} type="text" />
-      <Input text={situacionActual} type="text" />
-      <Input text={novedad} type="text" />
+      <Input text={fechaIngresoLabel} type="date" />
+      <Input text={tiempoServicioLabel} type="number" />
+      <Input text={dependenciaLabel} type="text" />
+      <Input text={areafuncionalLabel} type="text" />
+      <Input text={cargoLabel} type="text" />
+      <Input text={codigoLabel} type="number" />
+      <Input text={gradoLabel} type="number" />
+      <Input text={nivelLabel} type="text" />
+      <Input text={naturalezaLabel} type="text" />
+      <Input text={situacionActualLabel} type="text" />
+      <Input text={novedadLabel} type="text" />
     </div>
   );
 };

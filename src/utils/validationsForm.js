@@ -6,6 +6,8 @@ export const validationsForm = (form) => {
 
   if (!form.funcionario.trim()) {
     errors.funcionario = "El nombre del funcionario es requerido";
+  } else if (!regexName.test(form.funcionario.trim())) {
+    errors.funcionario = "El correo electroónico no es valido";
   }
 
   if (!form.sexo.trim()) {
@@ -93,4 +95,6 @@ export const validationsForm = (form) => {
   if (!form.hijos.trim()) {
     errors.hijos = "El numero de hijos  es requerido";
   }
+
+  return errors;
 };
