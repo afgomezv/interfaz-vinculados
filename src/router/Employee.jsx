@@ -1,5 +1,9 @@
 //React
 import { useForm } from "../hooks/useForm";
+import { useEffect } from "react";
+
+//React-Router
+import { useNavigate, useParams } from "react-router-dom";
 
 //Componentes
 import { Academy } from "../components/Academy";
@@ -24,7 +28,17 @@ export const Employee = () => {
     handleChange,
     handleBlur,
     handleSubmit,
+    loadEmployee,
   } = useForm(initialForm, validationsForm);
+
+  const navigate = useNavigate();
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.id) {
+      loadEmployee(params.id);
+    }
+  }, [params.id]);
 
   return (
     <div>

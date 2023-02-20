@@ -5,9 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Employee } from "./router/Employee";
 import { List } from "./router/List";
 
-//
-import { Data } from "./components/Data";
-
 const router = createBrowserRouter([
   {
     path: "/",
