@@ -1,6 +1,6 @@
 //React
-import { useForm } from "../hooks/useForm";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { FormContext } from "../contexts/FormContext";
 
 //React-Router
 import { useNavigate, useParams } from "react-router-dom";
@@ -15,10 +15,6 @@ import { Menu } from "../components/Menu";
 import { Salary } from "../components/Salary";
 import { Social } from "../components/Social";
 
-//Utils
-import { initialForm } from "../utils/initialForm";
-import { validationsForm } from "../utils/validationsForm";
-
 export const Employee = () => {
   const {
     form,
@@ -29,7 +25,7 @@ export const Employee = () => {
     handleBlur,
     handleSubmit,
     loadEmployee,
-  } = useForm(initialForm, validationsForm);
+  } = useContext(FormContext);
 
   const navigate = useNavigate();
   const params = useParams();

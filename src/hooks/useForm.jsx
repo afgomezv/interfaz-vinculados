@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const useForm = (initialForm, validateForm) => {
   const [form, setForm] = useState(initialForm);
@@ -7,6 +7,8 @@ export const useForm = (initialForm, validateForm) => {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [editing, setEditing] = useState(false);
+
+  const navigate = useNavigate;
 
   const handleChange = (e) => {
     const { name, type, checked, value } = e.target;
@@ -18,30 +20,29 @@ export const useForm = (initialForm, validateForm) => {
 
   const handleBlur = (e) => {};
 
-  // const fetchData = async () => {
-  //   await fetch("http://localhost:4000/employees", {
-  //     method: "POST",
-  //     body: JSON.stringify(form),
-  //     headers: { "Content-Type": "application/json; charset=utf-8" },
-  //   });
-  //   setLoading(false);
-  //   Navigate("/");
-  // };
+  const fetchData = async () => {
+    if (editing) {
+      await fetch(`http://localhost:4000/employees/`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } else {
+      await fetch("http://localhost:4000/employees", {
+        method: "POST",
+        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+  };
 
-  // const URL = "https://formsubmit.co/ajax/afgomezvonline@gmail.com";
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   console.log(form);
-  //   await fetch(URL, {
-  //     method: "POST",
-  //     body: JSON.stringify(form),
-  //     headers: { "Content-Type": "application/json" },
-  //   })
-  //     .then((res) => res.json)
-  //     .catch((error) => console.error("Error", error))
-  //     .then((response) => {});
-  //   e.target.reset();
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    fetchData();
+    setLoading(false);
+    navigate("/");
+  };
 
   // const loadEmployee = async (id) => {
   //   const response = await fetch(`http://localhost:4000/employees/${id}`);

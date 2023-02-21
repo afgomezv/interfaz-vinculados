@@ -1,6 +1,9 @@
-//React-Router
+//Context
+import { FormProvider } from "./contexts/FormContext";
 
+//React-Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 //Rutas
 import { Employee } from "./router/Employee";
 import { List } from "./router/List";
@@ -18,7 +21,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <FormProvider>
+      <RouterProvider router={router} />;
+    </FormProvider>
+  );
 };
 
 export default App;
