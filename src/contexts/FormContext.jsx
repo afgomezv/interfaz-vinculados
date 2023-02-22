@@ -29,10 +29,10 @@ export const FormProvider = ({ children }) => {
 
   const handleBlur = (e) => {};
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-    fetch(URL, {
+    await fetch(URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
